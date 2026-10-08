@@ -20,4 +20,14 @@ public class HomeController {
         return Constant.INDEX_JSP;
     }
 
+	/**
+     * The Admin login form is dispatched.
+     *
+     * @return LOGIN_JSP - Display the login form.
+     */
+    @RequestMapping(value = Constant.LOGIN, method = RequestMethod.GET)
+    private String dispatchLoginPage() {
+        return Constant.LOGIN_JSP;
+    }
+
 }
