@@ -108,6 +108,10 @@ public class Constant {
 	// Error Constants.
 	public static final String ERROR_RETRIEVING_CANDIDATES = "Error while fetching the Candidiate details";
 	public static final String INDEX = "index";
+
+	// Admin login constants.
+	public static final String LOGIN = "login";
+	public static final String LOGIN_JSP = "login";
 }
 
    
