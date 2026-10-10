@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -162,6 +163,16 @@ public class CandidateServiceImpl implements CandidateService {
 	@Override
 	public List<Candidate> getCandidatesByStatus(CandidateStatus status) {
 		return candidateRepository.fetchCandidatesByStatus(status);
+	}
+
+	@Override
+	public Candidate uploadResume(long candidateId, MultipartFile resume) throws IOException, IsmException {
+		Optional<Candidate> existingCandidate = candidateRepository.findById(candidateId);
+		if (!existingCandidate.isPresent()) {
+			throw new IsmException(Constant.CANDIDATE_NOT_FOUND);
+		}
+		Candidate candidate = saveCandidateResume(existingCandidate.get(), resume);
+		return candidateRepository.save(candidate);
 	}
     
     /**

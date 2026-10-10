@@ -35,10 +35,14 @@ public class Constant {
 	public static final String PAGENATION_INFO = "pagenationInfo";
 	public static final String CANDIDATE_ID = "candidateId";
 	public static final String CANDIDATES = "candidate";
+	public static final String RESUME_FILE_PATH = "resumeFilePath";
+	public static final String CANDIDATE_NOT_FOUND = "Candidate not found for the given id";
+	public static final String RESUME_REQUIRED = "Resume file is required";
     
-    // Candidate mapping constants. 
+    // Candidate mapping constants.
     public final static String ADD_CANDIDATE = "addCandidate";
     public final static String SAVE_CANDIDATE = "saveCandidate";
+    public final static String UPLOAD_RESUME = "uploadResume";
 	public static final String VIEW_CANDIDATES = "viewCandidates";
 	public static final String SEARCH_BY_NAME = "searchByName";
     public static final String CREATE_CANDIDATE_JSP = "createCandidate";
