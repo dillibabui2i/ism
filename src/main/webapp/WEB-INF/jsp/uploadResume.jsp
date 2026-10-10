@@ -56,10 +56,10 @@
                 var body = httpRequest.response;
                 if (httpRequest.status === 200) {
                     successMessage.innerHTML = 'Resume uploaded successfully.';
-                    successMessage.style.display = '';
+                    successMessage.style.display = 'inline';
                 } else {
                     errorMessage.innerHTML = body && body.message ? body.message : 'Failed to upload resume.';
-                    errorMessage.style.display = '';
+                    errorMessage.style.display = 'inline';
                 }
             }
         };
