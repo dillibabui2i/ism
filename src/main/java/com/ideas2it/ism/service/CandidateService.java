@@ -121,9 +121,21 @@ public interface CandidateService {
 
 	/**
 	 * Gets candidates by status
-	 * 
-	 * @param status - Status of the candidate to fetch 
+	 *
+	 * @param status - Status of the candidate to fetch
 	 * @return candidates - Candidates having the entered status
 	 */
 	List<Candidate> getCandidatesByStatus(CandidateStatus status);
+
+	/**
+	 * Uploads or replaces the resume for an existing candidate, identified by id,
+	 * independent of the create/update candidate form.
+	 *
+	 * @param candidateId - Id of the existing candidate whose resume is to be stored.
+	 * @param resume - Resume uploaded is saved to the local directory and the path
+	 * is saved in the DB.
+	 * @return candidate - Candidate object with the updated resumeFilePath.
+	 * @throws IsmException - Thrown when no candidate exists for the given id.
+	 */
+	Candidate uploadResume(long candidateId, MultipartFile resume) throws IOException, IsmException;
 }
