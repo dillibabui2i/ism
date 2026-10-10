@@ -29,6 +29,17 @@ public class ResumeController {
     private CandidateService candidateService;
 
     /**
+     * Shows the standalone resume upload/replace form for an existing
+     * candidate.
+     *
+     * @return UPLOAD_RESUME_JSP - Page that shows the resume upload form.
+     */
+    @RequestMapping(value = Constant.UPLOAD_RESUME_FORM, method = RequestMethod.GET)
+    private String uploadResumeForm() {
+        return Constant.UPLOAD_RESUME_JSP;
+    }
+
+    /**
      * Stores the resume uploaded for the given candidate id and updates the
      * candidate's resumeFilePath. Writes a JSON response indicating success
      * or failure.
