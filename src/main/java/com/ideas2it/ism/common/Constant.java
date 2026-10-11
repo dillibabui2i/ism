@@ -43,11 +43,13 @@ public class Constant {
     public final static String ADD_CANDIDATE = "addCandidate";
     public final static String SAVE_CANDIDATE = "saveCandidate";
     public final static String UPLOAD_RESUME = "uploadResume";
+    public final static String UPLOAD_RESUME_FORM = "uploadResumeForm";
 	public static final String VIEW_CANDIDATES = "viewCandidates";
 	public static final String SEARCH_BY_NAME = "searchByName";
     public static final String CREATE_CANDIDATE_JSP = "createCandidate";
 	public static final String INDEX_JSP = "index";
 	public static final String VIEW_CANDIDATES_JSP = "viewCandidates";
+	public static final String UPLOAD_RESUME_JSP = "uploadResume";
 	public static final String VIEW_CANDIDATE_JSP = "viewCandidate";
 	public static final String VIEW_NEW_SCHEDULES_JSP = "viewNewSchedules";
 	public static final String VIEW_PENDING_SCHEDULES_JSP = "viewPendingSchedules";

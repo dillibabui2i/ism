@@ -1,0 +1,26 @@
+
+.table {
+   margin: auto;
+   width:400px;
+   border: none;
+   border-radius: 20px;
+   box-shadow: 10px 10px 5px grey;
+   background:linear-gradient(to top, #dad299, #b0dab9);
+   padding: 10px;
+}
+
+#submit {
+  background-color:green;
+  color:white;
+  width:100px;
+}
+
+#successMessage {
+  color:green;
+  display:none;
+}
+
+#errorMessage {
+  color:red;
+  display:none;
+}
