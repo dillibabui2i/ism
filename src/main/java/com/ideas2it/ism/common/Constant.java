@@ -116,6 +116,14 @@ public class Constant {
 	// Admin login constants.
 	public static final String LOGIN = "login";
 	public static final String LOGIN_JSP = "login";
+
+	// User registration constants.
+	public static final String USER = "user";
+	public static final String REGISTER = "register";
+	public static final String REGISTER_JSP = "register";
+	public static final String REGISTRATION_SUCCESS = "registrationSuccess";
+	public static final String ERROR = "error";
+	public static final String USERNAME_ALREADY_REGISTERED = "This username/email is already registered.";
 }
 
    
