@@ -9,7 +9,7 @@
 </head>
 <body> 
         <div class="navbar">
-            <a href="addCandidate">Add Candidate</a>
+            <a href="addCandidate">Create Candidate</a>
             <a href="viewCandidates">View Candidates</a>
             <a href="viewSchedules">View Schedules</a>
             <a href="uploadResumeForm">Upload Resume</a>

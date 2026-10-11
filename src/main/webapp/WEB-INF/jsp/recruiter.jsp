@@ -19,7 +19,7 @@
         <input class="save" type="submit" value="view schedules"/>
     </form><br>
     <form action="addCandidate" method="post">
-        <input class="save" type="submit" value="add candidate"/>
+        <input class="save" type="submit" value="Create Candidate"/>
     </form><br>
     <form action="candidatesByStatus" method="post">
         <select name="status">
