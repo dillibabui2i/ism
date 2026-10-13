@@ -126,6 +126,12 @@ public class Constant {
 	public static final String REGISTRATION_SUCCESS = "registrationSuccess";
 	public static final String ERROR = "error";
 	public static final String USERNAME_ALREADY_REGISTERED = "This username/email is already registered.";
+
+	// User login constants.
+	public static final String USER_LOGIN = "user/login";
+	public static final String USER_LOGIN_JSP = "userLogin";
+	public static final String USER_HOME = "user/home";
+	public static final String USER_HOME_JSP = "userHome";
 }
 
    
