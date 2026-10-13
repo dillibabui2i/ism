@@ -57,4 +57,24 @@ public class UserController {
 		return Constant.REGISTER_JSP;
 	}
 
+	/**
+	 * The User login form is dispatched.
+	 *
+	 * @return USER_LOGIN_JSP - Display the User login form.
+	 */
+	@RequestMapping(value = Constant.USER_LOGIN, method = RequestMethod.GET)
+	public String userLoginForm() {
+		return Constant.USER_LOGIN_JSP;
+	}
+
+	/**
+	 * The placeholder home page is dispatched to a signed-in User.
+	 *
+	 * @return USER_HOME_JSP - Display the User home page.
+	 */
+	@RequestMapping(value = Constant.USER_HOME, method = RequestMethod.GET)
+	public String userHome() {
+		return Constant.USER_HOME_JSP;
+	}
+
 }
