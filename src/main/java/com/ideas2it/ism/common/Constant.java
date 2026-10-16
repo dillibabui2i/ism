@@ -132,6 +132,7 @@ public class Constant {
 	public static final String USER_LOGIN_JSP = "userLogin";
 	public static final String USER_HOME = "user/home";
 	public static final String USER_HOME_JSP = "userHome";
+	public static final String USER_LOGOUT = "user/logout";
 }
 
    
