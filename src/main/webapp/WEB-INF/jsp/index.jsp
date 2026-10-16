@@ -11,6 +11,6 @@
     </head> 
     <body>
 <%@ include file="header.jsp" %>
-<%@ include file="indexMenu.jsp" %>
+<%@ include file="navBar.jsp" %>
 </body>
 </html>

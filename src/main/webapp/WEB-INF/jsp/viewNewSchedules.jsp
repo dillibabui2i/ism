@@ -9,7 +9,8 @@
    <link rel="stylesheet" type="text/css" href="/css/recruiterMenu.css">
 </head>
 <body>
-<%@ include file="header.jsp" %> 
+<%@ include file="header.jsp" %>
+<%@ include file="navBar.jsp" %> 
         <div class="navbar">
             <a href="newSchedules?id=${employee.id}">New Schedules</a>
             <a href="pendingSchedules?id=${employee.id}">Pending Schedules</a>

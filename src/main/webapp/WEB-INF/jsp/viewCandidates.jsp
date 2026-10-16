@@ -8,7 +8,7 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>  
-<%@ include file="recruiterMenu.jsp" %>
+<%@ include file="navBar.jsp" %>
         <div>
           <table align="center">
           <tr>

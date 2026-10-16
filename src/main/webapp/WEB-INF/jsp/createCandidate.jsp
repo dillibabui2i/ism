@@ -11,7 +11,7 @@
 </head>
 <body>
 <%@ include file="header.jsp" %> 
-<%@ include file="recruiterMenu.jsp" %> 
+<%@ include file="navBar.jsp" %> 
  <form:form name ="form" action="saveCandidate" method="post" modelAttribute="candidate" enctype = "multipart/form-data"> 
       <table class="table"> 
         <form:input type="hidden" path="id" value="${candidate.id}"/>

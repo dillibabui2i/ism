@@ -14,11 +14,7 @@
         <div>
             <h2 align="center">Interview Schedule Management</h2>
         </div>
-        <div class="sidebar">
-            <a href="viewCandidates">Recruiter</a>
-            <a href="viewSchedules">Manager</a>
-            <a href="newSchedules?id=1">Employee</a>
-        </div>
+        <%@ include file="WEB-INF/jsp/navBar.jsp" %>
     </body>
 </html>
 

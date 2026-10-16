@@ -9,7 +9,7 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<%@ include file="recruiterMenu.jsp" %>
+<%@ include file="navBar.jsp" %>
   <table class="table">
     <tr><td colspan="2">Upload Resume</td></tr>
     <tr>

@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@ include file="header.jsp" %>  
+<%@ include file="header.jsp" %>
+<%@ include file="navBar.jsp" %>  
     <form action="schedulesByStatus" method="get">
         <select name="status">
             <c:forEach var="status" items="${scheduleStatus}">

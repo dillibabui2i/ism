@@ -6,7 +6,7 @@
       <link rel="stylesheet" href="/css/createSchedule.css">
    <body>
 <%@ include file="header.jsp" %>   
-<%@ include file="recruiterMenu.jsp" %>
+<%@ include file="navBar.jsp" %>
 
       <div id="createScheduleId" class="makeSchedule" align="center">
          <form:form id="createScheduleFormId" action="createSchedule" method="post" modelAttribute="schedule">
