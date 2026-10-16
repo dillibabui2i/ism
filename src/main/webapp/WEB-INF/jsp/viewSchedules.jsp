@@ -10,7 +10,8 @@
  <link rel="stylesheet" type="text/css" href="/css/viewSchedules.css">
 </head>
 <body>
-<%@ include file="header.jsp" %> 
+<%@ include file="header.jsp" %>
+<%@ include file="navBar.jsp" %> 
 	<div>
         <table id="contentTable" class = "table" align="center" cellpadding = "10">
             <tr>

@@ -12,7 +12,8 @@
 <body>
 
 </body>
-<%@ include file="header.jsp" %> 
+<%@ include file="header.jsp" %>
+<%@ include file="navBar.jsp" %> 
     <div>
         <table class="table" id="scheduleForm">
             <tr>

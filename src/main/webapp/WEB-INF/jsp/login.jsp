@@ -8,6 +8,7 @@
 <title>Admin Login</title>
 </head>
 <body>
+<%@ include file="navBar.jsp" %>
     <div>
         <h2 align="center">Admin Login</h2>
     </div>

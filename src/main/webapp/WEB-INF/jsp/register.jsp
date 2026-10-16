@@ -8,6 +8,7 @@
 <title>Register</title>
 </head>
 <body>
+<%@ include file="navBar.jsp" %>
     <div>
         <h2 align="center">Register</h2>
     </div>

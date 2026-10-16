@@ -8,6 +8,7 @@
 <title>User Login</title>
 </head>
 <body>
+<%@ include file="navBar.jsp" %>
     <div>
         <h2 align="center">User Login</h2>
     </div>

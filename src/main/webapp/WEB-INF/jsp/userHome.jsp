@@ -7,6 +7,7 @@
 <title>User Home</title>
 </head>
 <body>
+<%@ include file="navBar.jsp" %>
     <div>
         <h2 align="center">User Home</h2>
     </div>
