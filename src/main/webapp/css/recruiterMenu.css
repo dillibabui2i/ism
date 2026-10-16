@@ -30,6 +30,26 @@
   float: right;
 }
 
+.navbar .logout-form {
+  float: left;
+  margin: 0;
+}
+
+.navbar .logout-form button {
+  display: block;
+  padding: 14px 16px;
+  margin: 0;
+  color: white;
+  background: transparent;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.navbar .logout-form button:hover {
+  background-color: #555;
+}
+
 .navbar input[type=text] {
   padding: 5px;
   margin-top: 8px;
