@@ -126,6 +126,10 @@ public class Constant {
 	public static final String REGISTRATION_SUCCESS = "registrationSuccess";
 	public static final String ERROR = "error";
 	public static final String USERNAME_ALREADY_REGISTERED = "This username/email is already registered.";
+	public static final String USERNAME_REQUIRED = "Username/email is required.";
+	public static final String PASSWORD_REQUIRED = "Password is required.";
+	public static final String INVALID_USERNAME_FORMAT = "Please enter a valid username or email address.";
+	public static final String PASSWORD_TOO_WEAK = "Password must be at least 8 characters long and contain at least one letter and one digit.";
 
 	// User login constants.
 	public static final String USER_LOGIN = "user/login";
@@ -133,6 +137,7 @@ public class Constant {
 	public static final String USER_HOME = "user/home";
 	public static final String USER_HOME_JSP = "userHome";
 	public static final String USER_LOGOUT = "user/logout";
+	public static final String LOGIN_FIELDS_REQUIRED = "Username/email and password are required.";
 }
 
    

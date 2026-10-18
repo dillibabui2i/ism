@@ -24,11 +24,15 @@
                 <table>
                     <tr>
                         <td>Username:</td>
-                        <td><input type="text" name="username" value="${user.username}" required="required"/></td>
+                        <td><input type="text" name="username" value="${user.username}" required="required"
+                            pattern="^[A-Za-z0-9][A-Za-z0-9._-]{2,29}$|^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+                            title="Enter a username (3-30 characters: letters, digits, '.', '_' or '-') or a valid email address."/></td>
                     </tr>
                     <tr>
                         <td>Password:</td>
-                        <td><input type="password" name="password" required="required"/></td>
+                        <td><input type="password" name="password" required="required" minlength="8"
+                            pattern="^(?=.*[A-Za-z])(?=.*\d).{8,}$"
+                            title="At least 8 characters, including at least one letter and one digit."/></td>
                     </tr>
                     <tr>
                         <td colspan="2"><input type="submit" value="Register"/></td>
