@@ -35,7 +35,7 @@ public class UserServiceImplTest {
 	private UserServiceImpl userService;
 
 	private static final String USERNAME = "newuser";
-	private static final String PASSWORD = "plaintextPassword";
+	private static final String PASSWORD = "plaintextPassword1";
 
 	private User newUser() {
 		User user = new User();
@@ -86,6 +86,66 @@ public class UserServiceImplTest {
 
 		assertNotEquals(PASSWORD, storedPassword);
 		assertTrue(new BCryptPasswordEncoder().matches(PASSWORD, storedPassword));
+	}
+
+	// ac-004: a blank username is rejected before any lookup or save.
+	@Test
+	public void registerUser_throwsAndNeverSaves_whenUsernameIsBlank() {
+		User user = newUser();
+		user.setUsername("");
+
+		try {
+			userService.registerUser(user);
+			fail("Expected IsmException for blank username");
+		} catch (IsmException exception) {
+			assertEquals(Constant.USERNAME_REQUIRED, exception.getMessage());
+		}
+		verify(userRepository, never()).save(any());
+	}
+
+	// ac-004: a blank password is rejected before any lookup or save.
+	@Test
+	public void registerUser_throwsAndNeverSaves_whenPasswordIsBlank() {
+		User user = newUser();
+		user.setPassword("");
+
+		try {
+			userService.registerUser(user);
+			fail("Expected IsmException for blank password");
+		} catch (IsmException exception) {
+			assertEquals(Constant.PASSWORD_REQUIRED, exception.getMessage());
+		}
+		verify(userRepository, never()).save(any());
+	}
+
+	// ac-004: an unusable username/email format is rejected and no save is attempted.
+	@Test
+	public void registerUser_throwsAndNeverSaves_whenUsernameFormatIsInvalid() {
+		User user = newUser();
+		user.setUsername("in valid!");
+
+		try {
+			userService.registerUser(user);
+			fail("Expected IsmException for invalid username format");
+		} catch (IsmException exception) {
+			assertEquals(Constant.INVALID_USERNAME_FORMAT, exception.getMessage());
+		}
+		verify(userRepository, never()).save(any());
+	}
+
+	// ac-005: a password below the minimum length/complexity is rejected and no save is attempted.
+	@Test
+	public void registerUser_throwsAndNeverSaves_whenPasswordIsTooWeak() {
+		User user = newUser();
+		user.setPassword("short1");
+
+		try {
+			userService.registerUser(user);
+			fail("Expected IsmException for weak password");
+		} catch (IsmException exception) {
+			assertEquals(Constant.PASSWORD_TOO_WEAK, exception.getMessage());
+		}
+		verify(userRepository, never()).save(any());
 	}
 
 }

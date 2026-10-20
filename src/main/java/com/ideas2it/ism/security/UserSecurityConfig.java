@@ -7,6 +7,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.ideas2it.ism.common.Constant;
@@ -50,7 +53,25 @@ public class UserSecurityConfig extends WebSecurityConfigurerAdapter {
 			.logout()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/" + Constant.USER_LOGOUT, "POST"))
 				.logoutSuccessUrl("/" + Constant.USER_LOGIN)
-				.invalidateHttpSession(true);
+				.invalidateHttpSession(true)
+				.and()
+			.addFilterAt(userLoginAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+	}
+
+	private UserLoginAuthenticationFilter userLoginAuthenticationFilter() throws Exception {
+		UserLoginAuthenticationFilter filter = new UserLoginAuthenticationFilter();
+		filter.setAuthenticationManager(authenticationManagerBean());
+		filter.setFilterProcessesUrl("/" + Constant.USER_LOGIN);
+
+		SimpleUrlAuthenticationSuccessHandler successHandler = new SimpleUrlAuthenticationSuccessHandler(
+				"/" + Constant.USER_HOME);
+		successHandler.setAlwaysUseDefaultTargetUrl(true);
+		filter.setAuthenticationSuccessHandler(successHandler);
+
+		filter.setAuthenticationFailureHandler(
+				new SimpleUrlAuthenticationFailureHandler("/" + Constant.USER_LOGIN + "?error"));
+
+		return filter;
 	}
 
 }
