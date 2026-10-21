@@ -138,6 +138,23 @@ public class Constant {
 	public static final String USER_HOME_JSP = "userHome";
 	public static final String USER_LOGOUT = "user/logout";
 	public static final String LOGIN_FIELDS_REQUIRED = "Username/email and password are required.";
+
+	// User profile constants.
+	public static final String USER_PROFILE = "user/profile";
+	public static final String USER_PROFILE_JSP = "userProfile";
+	public static final String USER_PROFILE_EMAIL = "user/profile/email";
+	public static final String USER_PROFILE_PASSWORD = "user/profile/password";
+	public static final String EMAIL = "email";
+	public static final String CURRENT_PASSWORD = "currentPassword";
+	public static final String NEW_PASSWORD = "newPassword";
+	public static final String EMAIL_UPDATED = "emailUpdated";
+	public static final String PASSWORD_UPDATED = "passwordUpdated";
+	public static final String USER_NOT_FOUND = "User not found.";
+	public static final String EMAIL_REQUIRED = "Email is required.";
+	public static final String INVALID_EMAIL_FORMAT = "Please enter a valid email address.";
+	public static final String CURRENT_PASSWORD_REQUIRED = "Current password is required.";
+	public static final String NEW_PASSWORD_REQUIRED = "New password is required.";
+	public static final String CURRENT_PASSWORD_INCORRECT = "The current password you entered is incorrect.";
 }
 
    
