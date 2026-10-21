@@ -46,6 +46,44 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	@Override
+	public User findByUsername(String username) throws IsmException {
+		return userRepository.findByUsername(username)
+				.orElseThrow(() -> new IsmException(Constant.USER_NOT_FOUND));
+	}
+
+	@Override
+	public User updateEmail(String username, String email) throws IsmException {
+		if (!StringUtils.hasText(email)) {
+			throw new IsmException(Constant.EMAIL_REQUIRED);
+		}
+		if (!EMAIL_PATTERN.matcher(email).matches()) {
+			throw new IsmException(Constant.INVALID_EMAIL_FORMAT);
+		}
+		User user = findByUsername(username);
+		user.setEmail(email);
+		return userRepository.save(user);
+	}
+
+	@Override
+	public void changePassword(String username, String currentPassword, String newPassword) throws IsmException {
+		if (!StringUtils.hasText(currentPassword)) {
+			throw new IsmException(Constant.CURRENT_PASSWORD_REQUIRED);
+		}
+		if (!StringUtils.hasText(newPassword)) {
+			throw new IsmException(Constant.NEW_PASSWORD_REQUIRED);
+		}
+		if (!PASSWORD_PATTERN.matcher(newPassword).matches()) {
+			throw new IsmException(Constant.PASSWORD_TOO_WEAK);
+		}
+		User user = findByUsername(username);
+		if (!passwordEncoder.matches(currentPassword, user.getPassword())) {
+			throw new IsmException(Constant.CURRENT_PASSWORD_INCORRECT);
+		}
+		user.setPassword(passwordEncoder.encode(newPassword));
+		userRepository.save(user);
+	}
+
 	private void validateUser(User user) throws IsmException {
 		if (!StringUtils.hasText(user.getUsername())) {
 			throw new IsmException(Constant.USERNAME_REQUIRED);

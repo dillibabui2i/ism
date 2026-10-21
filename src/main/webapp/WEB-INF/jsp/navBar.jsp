@@ -10,6 +10,7 @@
     <a href="${pageContext.request.contextPath}/viewSchedules">View Schedules</a>
     <a href="${pageContext.request.contextPath}/uploadResumeForm">Upload Resume</a>
     <% if (request.isUserInRole("USER")) { %>
+    <a href="${pageContext.request.contextPath}/user/profile">Profile</a>
     <form class="logout-form" method="post" action="${pageContext.request.contextPath}/user/logout">
         <button type="submit">Logout</button>
     </form>
